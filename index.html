@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSS Web App Launch Showcase - The Student Spot</title>
+  <meta name="description" content="Witness the launch of the new TSS web application. Generate your Member ID, access candidate details, and explore the Resume Studio.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Floating Grid Background and Orbs -->
+  <div class="grid-bg"></div>
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+  <div class="glow-orb glow-orb-3"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">TSS <span>⚡</span></a>
+      <nav>
+        <a href="#features">App Features</a>
+        <a href="#customizer">Interactive ID Card</a>
+        <a href="#timeline">Our Story</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><path d="m12 3-1.912 5.886L4.202 9l5.886 1.912L12 16.798l1.912-5.886L19.798 9l-5.886-1.912L12 3Z"/></svg>
+        Phase 1 Platform Launch
+      </div>
+      <h1>The Student Spot Web App is <span class="gradient-text">Officialy Live</span></h1>
+      <p>We are transitioning from a manual community network into a high-trust, automated ecosystem. Track verification status, customize resumes, and manage candidates securely.</p>
+      <div class="hero-ctas">
+        <a href="#customizer" class="btn btn-primary">Try Interactive ID Generator</a>
+        <a href="#features" class="btn btn-secondary">Learn More</a>
+      </div>
+      
+      <!-- Hero Mockup Frame -->
+      <div class="hero-mockup">
+        <div class="mockup-inner">
+          <img src="assets/hero_dashboard_mockup.jpg" alt="TSS HR & Admin Dashboard Mockup">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Banner -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <h3 data-target="20000">0</h3>
+        <p>Verified Members</p>
+      </div>
+      <div class="stat-item">
+        <h3 data-target="100">0</h3>
+        <p>Campuses Reached</p>
+      </div>
+      <div class="stat-item">
+        <h3 data-target="800">0</h3>
+        <p>Placements Made</p>
+      </div>
+      <div class="stat-item">
+        <h3 data-target="24">0</h3>
+        <p>Hour Vetting Turnaround</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Tab Section -->
+  <section id="features" class="showcase">
+    <div class="container">
+      <div class="section-header">
+        <h2>Built for Students, Founders, and Admins</h2>
+        <p>The TSS platform has been engineered to secure credentials, build ATS-grade resumes, and fast-track HR review loops.</p>
+      </div>
+
+      <!-- Tab Selectors -->
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="switchTab('candidate')">Candidate Portal</button>
+        <button class="tab-btn" onclick="switchTab('admin')">Admin Vetting Ledger</button>
+        <button class="tab-btn" onclick="switchTab('resume')">Resume Studio</button>
+      </div>
+
+      <!-- Tab 1: Candidate Portal -->
+      <div id="tab-candidate" class="tab-content active">
+        <div class="tab-visual">
+          <div class="tab-visual-inner">
+            <img src="assets/candidate_portal_mockup.jpg" alt="TSS Candidate Registration Portal Mockup">
+          </div>
+        </div>
+        <div class="tab-details">
+          <h3>Vetted Onboarding & Opportunities</h3>
+          <p>Candidates can sign up in less than 2 minutes using our mobile-friendly stepper. Real-time validation keeps candidate profiles accurate and opens access to partner openings.</p>
+          <ul class="feature-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span><strong>Mock OTP Verification:</strong> Native email and mobile verification safeguards community entry.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span><strong>Job Posting & Matcher:</strong> View active developer, designer, and startup openings posted directly by partners and match dynamically.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span><strong>Status Tracking:</strong> Real-time lookup queue monitors application progression.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tab 2: Admin Dashboard -->
+      <div id="tab-admin" class="tab-content">
+        <div class="tab-visual">
+          <div class="tab-visual-inner">
+            <img src="assets/hero_dashboard_mockup.jpg" alt="TSS Admin & HR Management Mockup">
+          </div>
+        </div>
+        <div class="tab-details">
+          <h3>Admin Control & HR Routing</h3>
+          <p>Administrators manage the vetting queue, review resume credentials, download spreadsheet reports, and log recruiter interactions.</p>
+          <ul class="feature-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span><strong>Auto-Assign to HRs:</strong> Vetted applicant profiles are automatically assigned to recruiters as soon as matching jobs open up.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span><strong>Metrics Board:</strong> Overview of processing numbers, verification rates, and weekly registrations.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span><strong>CSV Export:</strong> Instant generation of clean applicant tables compatible with Excel.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tab 3: Resume Studio -->
+      <div id="tab-resume" class="tab-content">
+        <div class="tab-visual">
+          <div class="tab-visual-inner">
+            <img src="assets/resume_studio_mockup.jpg" alt="TSS Resume Studio Mockup">
+          </div>
+        </div>
+        <div class="tab-details">
+          <h3>ATS-Friendly Resume Studio</h3>
+          <p>TSS members get free access to a customized, print-optimized resume builder that implements verified standards for industry resumes.</p>
+          <ul class="feature-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span><strong>Profile Sync:</strong> Sync your verified TSS credentials and education history with the resume generator instantly.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span><strong>Single-Column Layout:</strong> Designed to pass through Applicant Tracking Systems (ATS) cleanly.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span><strong>Fast Exporting:</strong> Download standard print-ready PDF files in less than 5 minutes.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Member ID Card Customizer -->
+  <section id="customizer" class="customizer">
+    <div class="container">
+      <div class="section-header">
+        <h2>Interactive Member ID Generator</h2>
+        <p>Every vetted TSS member receives a unique Virtual ID card that unlocks locked partner channels. Create a preview below.</p>
+      </div>
+
+      <div class="customizer-grid">
+        <!-- Form Details -->
+        <div class="customizer-form">
+          <h3>Enter Mock Card Details</h3>
+          <div class="form-group">
+            <label for="input-name">Full Name</label>
+            <input type="text" id="input-name" value="Rajkamal Panthagani" placeholder="e.g. Rajkamal Panthagani">
+          </div>
+          <div class="form-group">
+            <label for="input-college">Campus / Institution</label>
+            <input type="text" id="input-college" value="Karimnagar College of Engineering" placeholder="e.g. Karimnagar College of Engineering">
+          </div>
+          <div class="form-group">
+            <label for="input-role">Domain / Primary Role</label>
+            <select id="input-role">
+              <option value="Student · Software">Student · Software</option>
+              <option value="Student · Design">Student · Design</option>
+              <option value="Startup Founder">Startup Founder</option>
+              <option value="Freelance Developer">Freelance Developer</option>
+              <option value="Technical Mentor">Technical Mentor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="input-badge">Vetting Status</label>
+            <select id="input-badge">
+              <option value="VERIFIED">Verified Member</option>
+              <option value="UNDER AUDIT">Under Audit</option>
+              <option value="TRIAL MODE">Trial Mode</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- HTML Card Preview -->
+        <div class="card-preview-area">
+          <div class="card-container">
+            <div class="virtual-card" id="virtual-card">
+              <div class="card-scanline"></div>
+              
+              <div class="card-header-ui">
+                <span class="card-logo-ui">TSS <span>⚡</span></span>
+                <span class="card-badge-ui" id="card-badge">VERIFIED</span>
+              </div>
+              
+              <div class="card-body-ui">
+                <div class="card-id-ui" id="card-id">TSS-ST-260704001</div>
+                <div class="card-subtitle-ui" id="card-college">Karimnagar College of Engineering</div>
+              </div>
+              
+              <div class="card-footer-ui">
+                <div class="card-holder-ui">
+                  <span class="holder-name-ui" id="card-name">Rajkamal Panthagani</span>
+                  <span class="holder-role-ui" id="card-role">Student · Software</span>
+                </div>
+                <div class="card-barcode">
+                  <div class="barcode-lines"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Growth & Timeline Section -->
+  <section id="timeline" class="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>The Journey of TSS</h2>
+        <p>From a localized student network to a comprehensive pan-India talent validation platform.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- 2024 -->
+        <div class="timeline-container left-timeline">
+          <div class="timeline-content">
+            <h3>2024</h3>
+            <h4>Regional Community Inception</h4>
+            <p>Started in Karimnagar, Telangana. Built as a closed communication network for tech students to share verified resource pipelines and project insights.</p>
+          </div>
+        </div>
+        <!-- 2025 -->
+        <div class="timeline-container right-timeline">
+          <div class="timeline-content">
+            <h3>2025</h3>
+            <h4>10,000+ Members, 50+ Campuses</h4>
+            <p>Expanded community operations across Andhra Pradesh and Telangana. Created specialized student chapters and launched offline workshop networks.</p>
+          </div>
+        </div>
+        <!-- 2026 -->
+        <div class="timeline-container left-timeline">
+          <div class="timeline-content">
+            <h3>2026 (Now)</h3>
+            <h4>20,000+ Members & Automated Web App</h4>
+            <p>Transitioned into a fully structured credential ecosystem. Launched the official TSS platform with automated vetting, mock verification, and Resume Studio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Box -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to Explore the Platform?</h2>
+        <p>Join the 20,000+ verified members currently leveraging TSS Member IDs to accelerate their career preparation.</p>
+        <a href="https://thestudentspot.app" class="btn btn-primary btn-large">Launch the TSS Web App</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <span class="logo">TSS <span>⚡</span></span>
+      <div class="footer-text">&copy; 2026 The Student Spot. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#customizer">ID Customizer</a>
+        <a href="#timeline">Timeline</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
