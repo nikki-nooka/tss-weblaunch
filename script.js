@@ -255,7 +255,6 @@ updateCard();
 
 // Card 3D Tilt Effect
 const cardContainer = document.querySelector('.card-container');
-const virtualCard = document.getElementById('virtual-card');
 
 if (cardContainer && virtualCard) {
   cardContainer.addEventListener('mousemove', (e) => {
