@@ -251,14 +251,14 @@ nav a:hover {
   margin: 0 auto;
   border-radius: 12px;
   border: 1px solid var(--border-color);
-  padding: 8px;
-  background: rgba(255, 255, 255, 0.02);
+  background: #0d0d12;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(247, 127, 0, 0.1);
   overflow: hidden;
 }
 
 .mockup-inner {
-  border-radius: 8px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
   overflow: hidden;
   background: #0d0d12;
   position: relative;
@@ -382,14 +382,14 @@ nav a:hover {
 .tab-visual {
   border-radius: 12px;
   border: 1px solid var(--border-color);
-  background: rgba(255, 255, 255, 0.02);
-  padding: 8px;
+  background: #0d0d12;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .tab-visual-inner {
-  border-radius: 8px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
   overflow: hidden;
   aspect-ratio: 16/9;
 }
@@ -1018,6 +1018,43 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Mockup Browser Window Headers */
+.mockup-window-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #13131a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 10px 16px;
+}
+.mock-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.mock-dot.close {
+  background: #ef4444;
+}
+.mock-dot.minimize {
+  background: #f59e0b;
+}
+.mock-dot.expand {
+  background: #10b981;
+}
+.mock-url {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  padding: 2px 16px;
+  border-radius: 4px;
+  margin-left: 16px;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
+
 /* Responsive Rules */
 @media screen and (max-width: 992px) {
   .hero h1 {
@@ -1036,11 +1073,44 @@ footer {
   
   .customizer-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
   
   .card-preview-area {
     order: -1;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7, 7, 9, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-color);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .preview-card-wrapper {
+    width: 100%;
+    max-width: 340px;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .card-container {
+    max-width: 300px;
+  }
+  
+  .card-actions {
+    max-width: 300px;
+    margin-top: 0;
   }
 }
 
@@ -1079,10 +1149,6 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-  .container {
-    padding: 0 1rem;
-  }
-
   .hero h1 {
     font-size: 1.8rem;
   }
@@ -1124,11 +1190,11 @@ footer {
     white-space: nowrap;
     padding-bottom: 0.5rem;
     gap: 0.5rem;
-    scrollbar-width: none; /* Hide scrollbar for clean look in Firefox */
+    scrollbar-width: none;
   }
   
   .tab-buttons::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in Chrome/Safari */
+    display: none;
   }
 
   .tab-btn {
@@ -1172,5 +1238,9 @@ footer {
 
   .timeline-container::after {
     left: 12px;
+  }
+  
+  .mock-url {
+    display: none;
   }
 }
