@@ -182,7 +182,14 @@
       <div class="customizer-grid">
         <!-- Form Details -->
         <div class="customizer-form">
-          <h3>Enter Mock Card Details</h3>
+          <div class="form-progress">
+            <div class="progress-label"><span>Card Configuration Progress</span><span id="progress-percent">100%</span></div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" id="progress-fill" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <h3>Build Member ID Card</h3>
           <div class="form-group">
             <label for="input-name">Full Name</label>
             <input type="text" id="input-name" value="Rajkamal Panthagani" placeholder="e.g. Rajkamal Panthagani">
@@ -191,51 +198,80 @@
             <label for="input-college">Campus / Institution</label>
             <input type="text" id="input-college" value="Karimnagar College of Engineering" placeholder="e.g. Karimnagar College of Engineering">
           </div>
+          
           <div class="form-group">
-            <label for="input-role">Domain / Primary Role</label>
-            <select id="input-role">
-              <option value="Student · Software">Student · Software</option>
-              <option value="Student · Design">Student · Design</option>
-              <option value="Startup Founder">Startup Founder</option>
-              <option value="Freelance Developer">Freelance Developer</option>
-              <option value="Technical Mentor">Technical Mentor</option>
-            </select>
+            <label>Domain / Primary Role</label>
+            <div class="role-selector-grid" id="role-chips">
+              <button type="button" class="role-chip active" data-value="Student · Software">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Software
+              </button>
+              <button type="button" class="role-chip" data-value="Student · Design">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                Design
+              </button>
+              <button type="button" class="role-chip" data-value="Startup Founder">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.886L4.202 9l5.886 1.912L12 16.798l1.912-5.886L19.798 9l-5.886-1.912L12 3Z"/></svg>
+                Founder
+              </button>
+              <button type="button" class="role-chip" data-value="Freelance Developer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                Freelancer
+              </button>
+            </div>
+            <input type="hidden" id="input-role" value="Student · Software">
           </div>
+
           <div class="form-group">
-            <label for="input-badge">Vetting Status</label>
-            <select id="input-badge">
-              <option value="VERIFIED">Verified Member</option>
-              <option value="UNDER AUDIT">Under Audit</option>
-              <option value="TRIAL MODE">Trial Mode</option>
-            </select>
+            <label>Vetting Status</label>
+            <div class="status-selector-row" id="status-chips">
+              <button type="button" class="status-chip chip-verified active" data-value="VERIFIED">Verified</button>
+              <button type="button" class="status-chip chip-audit" data-value="UNDER AUDIT">Under Audit</button>
+              <button type="button" class="status-chip chip-trial" data-value="TRIAL MODE">Trial Mode</button>
+            </div>
+            <input type="hidden" id="input-badge" value="VERIFIED">
           </div>
         </div>
 
-        <!-- HTML Card Preview -->
+        <!-- HTML Card Preview Wrapper -->
         <div class="card-preview-area">
-          <div class="card-container">
-            <div class="virtual-card" id="virtual-card">
-              <div class="card-scanline"></div>
-              
-              <div class="card-header-ui">
-                <span class="card-logo-ui">TSS <span>⚡</span></span>
-                <span class="card-badge-ui" id="card-badge">VERIFIED</span>
-              </div>
-              
-              <div class="card-body-ui">
-                <div class="card-id-ui" id="card-id">TSS-ST-260704001</div>
-                <div class="card-subtitle-ui" id="card-college">Karimnagar College of Engineering</div>
-              </div>
-              
-              <div class="card-footer-ui">
-                <div class="card-holder-ui">
-                  <span class="holder-name-ui" id="card-name">Rajkamal Panthagani</span>
-                  <span class="holder-role-ui" id="card-role">Student · Software</span>
+          <div class="preview-card-wrapper">
+            <div class="card-container">
+              <div class="virtual-card status-verified" id="virtual-card">
+                <div class="card-scanline"></div>
+                <div class="laser-scanner" id="laser-scanner"></div>
+                
+                <div class="card-header-ui">
+                  <span class="card-logo-ui">TSS <span>⚡</span></span>
+                  <span class="card-badge-ui" id="card-badge">VERIFIED</span>
                 </div>
-                <div class="card-barcode">
-                  <div class="barcode-lines"></div>
+                
+                <div class="card-body-ui">
+                  <div class="card-id-ui" id="card-id">TSS-ST-260704001</div>
+                  <div class="card-subtitle-ui" id="card-college">Karimnagar College of Engineering</div>
+                </div>
+                
+                <div class="card-footer-ui">
+                  <div class="card-holder-ui">
+                    <span class="holder-name-ui" id="card-name">Rajkamal Panthagani</span>
+                    <span class="holder-role-ui" id="card-role">Student · Software</span>
+                  </div>
+                  <div class="card-barcode">
+                    <div class="barcode-lines"></div>
+                  </div>
                 </div>
               </div>
+            </div>
+            
+            <div class="card-actions">
+              <button type="button" class="btn btn-secondary card-action-btn" id="btn-scan">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="6" y2="2"/><line x1="12" x2="12" y1="22" y2="18"/></svg>
+                Security Scan
+              </button>
+              <button type="button" class="btn btn-primary card-action-btn" id="btn-export">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                Export ID Card
+              </button>
             </div>
           </div>
         </div>
