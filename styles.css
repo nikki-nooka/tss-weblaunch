@@ -499,9 +499,12 @@ nav a:hover {
 }
 
 .card-container {
-  width: 380px;
-  height: 240px;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1.583;
   perspective: 1000px;
+  container-type: inline-size;
+  margin: 0 auto;
 }
 
 .virtual-card {
@@ -510,8 +513,8 @@ nav a:hover {
   height: 100%;
   background: linear-gradient(135deg, #181824 0%, #0d0d12 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: 4.5cqw;
+  padding: 6cqw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -727,10 +730,10 @@ nav a:hover {
 
 /* Card Hologram chip */
 .card-chip {
-  width: 40px;
-  height: 30px;
+  width: 11cqw;
+  height: 8cqw;
   background: linear-gradient(135deg, #fce0ad 0%, #dfa539 100%);
-  border-radius: 6px;
+  border-radius: 1.5cqw;
   position: relative;
   overflow: hidden;
 }
@@ -758,7 +761,7 @@ nav a:hover {
 .card-logo-ui {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 5.5cqw;
   color: var(--text-main);
 }
 
@@ -770,8 +773,8 @@ nav a:hover {
   background: var(--success-glow);
   color: var(--success);
   border: 1px solid rgba(16, 185, 129, 0.3);
-  font-size: 0.65rem;
-  padding: 0.2rem 0.6rem;
+  font-size: 2.8cqw;
+  padding: 1cqw 2.5cqw;
   border-radius: 99px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -785,16 +788,16 @@ nav a:hover {
 
 .card-id-ui {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 6cqw;
   font-weight: 700;
   letter-spacing: 1.5px;
-  margin-bottom: 0.2rem;
+  margin-bottom: 1cqw;
   color: var(--text-main);
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .card-subtitle-ui {
-  font-size: 0.7rem;
+  font-size: 3cqw;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -814,13 +817,13 @@ nav a:hover {
 }
 
 .holder-name-ui {
-  font-size: 0.95rem;
+  font-size: 4cqw;
   font-weight: 600;
   color: var(--text-main);
 }
 
 .holder-role-ui {
-  font-size: 0.7rem;
+  font-size: 3cqw;
   color: var(--text-muted);
 }
 
@@ -832,8 +835,8 @@ nav a:hover {
 }
 
 .barcode-lines {
-  height: 20px;
-  width: 60px;
+  height: 5.5cqw;
+  width: 16cqw;
   background: repeating-linear-gradient(
     90deg,
     var(--text-main),
@@ -1076,13 +1079,17 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
   .hero h1 {
     font-size: 1.8rem;
   }
   
   .hero p {
     font-size: 1rem;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
   
   .hero-ctas {
@@ -1097,8 +1104,41 @@ footer {
     text-align: center;
   }
   
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-item h3 {
+    font-size: 1.8rem;
+  }
+
+  .stat-item p {
+    font-size: 0.75rem;
+  }
+
+  .tab-buttons {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+    gap: 0.5rem;
+    scrollbar-width: none; /* Hide scrollbar for clean look in Firefox */
+  }
+  
+  .tab-buttons::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome/Safari */
+  }
+
+  .tab-btn {
+    flex: 0 0 auto;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+  
   .customizer-form {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
   }
   
   .role-selector-grid {
@@ -1114,42 +1154,23 @@ footer {
   .status-chip {
     border-radius: 8px;
   }
-  
-  .tab-buttons {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
-  .tab-btn {
-    font-size: 0.95rem;
-    padding: 0.5rem 1rem;
-    flex: 1 1 40%;
-    text-align: center;
-  }
-}
 
-@media screen and (max-width: 410px) {
-  .card-container {
-    transform: scale(0.85);
-    transform-origin: center center;
-    margin: -1.5rem 0;
-  }
-  
   .card-actions {
-    max-width: 320px;
     flex-direction: column;
     gap: 0.6rem;
+    width: 100%;
   }
-}
 
-@media screen and (max-width: 350px) {
-  .card-container {
-    transform: scale(0.75);
-    transform-origin: center center;
-    margin: -2.5rem 0;
+  .timeline::after {
+    left: 20px;
   }
-  
-  .card-actions {
-    max-width: 280px;
+
+  .timeline-container {
+    padding-left: 45px;
+    padding-right: 10px;
+  }
+
+  .timeline-container::after {
+    left: 12px;
   }
 }
