@@ -1,5 +1,5 @@
 // Tab Switcher Logic
-function switchTab(tabId) {
+function switchTab(event, tabId) {
   // Hide all tab contents
   const contents = document.querySelectorAll('.tab-content');
   contents.forEach(content => content.classList.remove('active'));
@@ -8,15 +8,17 @@ function switchTab(tabId) {
   const buttons = document.querySelectorAll('.tab-btn');
   buttons.forEach(btn => btn.classList.remove('active'));
 
-  // Show selected content and activate button
-  document.getElementById(`tab-${tabId}`).classList.add('active');
-  
-  // Find the button that calls this function and make it active
-  const eventTarget = window.event ? window.event.currentTarget : null;
-  if (eventTarget) {
-    eventTarget.classList.add('active');
+  // Show selected content
+  const targetContent = document.getElementById(`tab-${tabId}`);
+  if (targetContent) {
+    targetContent.classList.add('active');
+  }
+
+  // Activate clicked button
+  if (event && event.currentTarget) {
+    event.currentTarget.classList.add('active');
   } else {
-    // Fallback: search by text or index if event is missing
+    // Fallback if event is missing
     const buttons = document.querySelectorAll('.tab-btn');
     buttons.forEach(btn => {
       if (btn.innerText.toLowerCase().includes(tabId)) {
