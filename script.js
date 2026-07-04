@@ -69,10 +69,18 @@ if (statsSection) {
         animated = true;
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.1 });
   
   observer.observe(statsSection);
 }
+
+// Fallback trigger if observer fails on some viewports
+setTimeout(() => {
+  if (!animated) {
+    animateStats();
+    animated = true;
+  }
+}, 1200);
 
 // Interactive Card Customizer
 const inputName = document.getElementById('input-name');
