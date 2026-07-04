@@ -1,32 +1,26 @@
 // Tab Switcher Logic
-function switchTab(event, tabId) {
-  // Hide all tab contents
-  const contents = document.querySelectorAll('.tab-content');
-  contents.forEach(content => content.classList.remove('active'));
+const tabButtons = document.querySelectorAll('.tab-buttons .tab-btn');
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const tabId = button.getAttribute('data-tab');
 
-  // Deactivate all tab buttons
-  const buttons = document.querySelectorAll('.tab-btn');
-  buttons.forEach(btn => btn.classList.remove('active'));
+    // Hide all tab contents
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.classList.remove('active'));
 
-  // Show selected content
-  const targetContent = document.getElementById(`tab-${tabId}`);
-  if (targetContent) {
-    targetContent.classList.add('active');
-  }
+    // Deactivate all tab buttons
+    tabButtons.forEach(btn => btn.classList.remove('active'));
 
-  // Activate clicked button
-  if (event && event.currentTarget) {
-    event.currentTarget.classList.add('active');
-  } else {
-    // Fallback if event is missing
-    const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(btn => {
-      if (btn.innerText.toLowerCase().includes(tabId)) {
-        btn.classList.add('active');
-      }
-    });
-  }
-}
+    // Show selected content
+    const targetContent = document.getElementById(`tab-${tabId}`);
+    if (targetContent) {
+      targetContent.classList.add('active');
+    }
+
+    // Activate clicked button
+    button.classList.add('active');
+  });
+});
 
 // Stats Counter Animation
 const statsSection = document.querySelector('.stats');
